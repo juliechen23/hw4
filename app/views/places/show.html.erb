@@ -2,13 +2,18 @@
 
 <h2>My Posts</h2>
 <% for post in @posts %>
+  <% user = User.find_by({"id"=> post["user_id"] }) %>
+  <% if user %>
   <h3><%= post["title"] %></h3>
   <h4><%= post["posted_on"] %></h4>
   <p><%= post["description"] %></p>
+  <%eend%>
 <% end %>
 
 <p>
+ <% if @current_user %>
   <a href="/posts/new?place_id=<%= @place["id"] %>">New Post</a>
+  <% end %>
 </p>
 
 <p>
