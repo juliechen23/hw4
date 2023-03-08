@@ -51,6 +51,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_07_235451) do
     t.date "posted_on"
     t.integer "place_id"
     t.integer "user_id"
+    t.string "uploaded_image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
